@@ -1,0 +1,7 @@
+
+# dependencies
+/node_modules
+/angular/compProject/node_modules
+/vue/demo/node_modules
+
+.DS_Store
