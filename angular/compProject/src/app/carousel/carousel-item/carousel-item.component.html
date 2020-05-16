@@ -1,0 +1,8 @@
+<div class="carouselItem">
+  <img [src]="data.src" alt="" class="img">
+  <div class="content">
+    <div class="title" *ngIf="data.title">{{data.title}}</div>
+    <div class="subtitle" *ngIf="data.subTitle">{{data.subTitle}}</div>
+  </div>
+  <div class="btn" *ngIf="data.btnText">{{data.btnText}}</div>
+</div>

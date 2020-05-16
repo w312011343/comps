@@ -1,0 +1,12 @@
+<div class="carousel">
+  <div class="itemWrap">
+    <ng-container *ngFor="let item of carousel.data;let i = index">
+      <app-carousel-item [ngClass]="{'hide': carousel.selectIndex !== i}"  [data]="item"></app-carousel-item>
+    </ng-container>
+  </div>
+  <div class="dotWrap" (click)="dotClick($event)">
+    <ng-container *ngFor="let item of carousel.data;let i = index">
+      <app-carousel-dot [selectIndex]="carousel.selectIndex" [index]="i"></app-carousel-dot>
+    </ng-container>
+  </div>
+</div>

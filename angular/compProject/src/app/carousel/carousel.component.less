@@ -1,0 +1,22 @@
+.carousel{
+  position: relative;
+  .hide{
+    display: none !important;
+  }
+  font-size: 0;
+  .itemWrap{
+    overflow: hidden;
+  }
+  .dotWrap{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    .dot{
+      &:nth-last-child(1){
+        margin-right: 0;
+      }
+    }
+  }
+}

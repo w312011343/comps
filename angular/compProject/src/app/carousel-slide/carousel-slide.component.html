@@ -1,0 +1,16 @@
+<div class="carousel" (mouseenter)="mouseenterFn()" (mouseleave)="mouseleaveFn()">
+<div class="itemWrap" [style]="{'width':allWidth,'transform': translateVal, 'transitionDuration': durationTime}">
+    <ng-container *ngFor="let item of carousel.data;let i = index">
+      <app-carousel-item  [data]="item" ></app-carousel-item>
+    </ng-container>
+  </div>
+  <div class="dotWrap" (click)="dotClick($event)">
+    <ng-container *ngFor="let item of arr;let i = index">
+      <app-carousel-dot [selectIndex]="carousel.selectIndex" [index]="i"></app-carousel-dot>
+    </ng-container>
+  </div>
+  <div class="arrowWrap" [ngClass]="{'hide': !carousel.arrow}" (click)="arrowFn($event)">
+      <div class="leftArrow arrow" data-type="left"></div>
+      <div class="rightArrow arrow" data-type="right"></div>
+  </div>
+</div>
