@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定时进度条样式</title>
+  <style>
+    .wrap{
+      width: 100px;
+      margin: 0 auto;
+      display: flex;
+    }
+   .wrap .item{
+     width: 30px;
+     height: 4px;
+     background: rgba(0, 0, 0, 0.3);
+     position: relative;
+     margin-left: 5px;
+   }
+   .wrap .item.selected:after{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      background: red;
+      height: 100%;
+      animation-name: keyframes-width;
+      animation-timing-function: linear;
+      animation-duration: var(--duration);
+      /* animation: keyframes-width 5s linear; */
+   }
+   @keyframes keyframes-width {
+     0%{
+       width: 0;
+     }
+     100%{
+       width: 100%;
+     }
+   }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="item selected" data-index='1'></div>
+    <div class="item" data-index='2'></div>
+    <div class="item" data-index='3'></div>
+  </div>
+</body>
+</html>
+<script>
+  (() => {
+    let selectIndex = '1';
+    let duration = 5000;
+    // document.body.style.setProperty('--duration', duration+'ms');
+    //设置值
+    document.querySelector('.wrap').style.setProperty('--duration', duration+'ms');
+    
+    
+    //获取值
+    // 获取一个 Dom 节点上的 CSS 变量
+    let var1 = document.querySelector('.wrap').style.getPropertyValue('--duration');
+    console.log(`var 值 ====${var1}`);
+    //获取任意 Dom 节点上的 CSS 变量
+    let var2 = getComputedStyle(document.querySelector('.wrap')).getPropertyValue('--duration')
+    console.log(`var2 值 ====${var2}`);
+    setInterval(() => {
+      document.querySelector('.item[data-index="'+selectIndex+'"]').className = 'item';
+      let index = parseInt(selectIndex)+1;
+      index = index > 3? 1:index;
+      selectIndex = index;
+      document.querySelector('.item[data-index="'+index+'"]').className = 'item selected';
+      
+    }, duration);
+  })()
+</script>
