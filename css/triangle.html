@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>纯css三角形的绘制</title>
+  <style>
+    body{
+      display: flex;
+    }
+    .item{
+      width: 200px;
+      margin-right: 50px;
+      border: 1px solid black;
+      text-align: center;
+    }
+    .left{
+      display: inline-block;
+      border-right: 50px solid red;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+    }
+    .right{
+      display: inline-block;
+      border-left: 50px solid red;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+    }
+    .up{
+      display: inline-block;
+      border-bottom: 50px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+    .down{
+      display: inline-block;
+      border-top: 50px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="item">
+    <h4>左三角</h4>
+    <div class="left"></div>
+  </div>
+  <div class="item">
+    <h4>右三角</h4>
+    <div class="right"></div>
+  </div>
+  <div class="item">
+    <h4>上三角</h4>
+    <div class="up"></div>
+  </div>
+  <div class="item">
+    <h4>下三角</h4>
+    <div class="down"></div>
+  </div>
+</body>
+</html>
